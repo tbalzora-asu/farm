@@ -2,265 +2,307 @@
 @import url('https://fonts.googleapis.com/css2?family=Habibi&family=Irish+Grover&display=swap');
 
 /*-------------------- CSS RESET ---------------------------------------------------*/
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* http://meyerweb.com/eric/tools/css/reset/ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, figure, figcaption,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
 }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 /* -------------------- ROOT VARIABLES --------------------------------------- */
 :root {
-    --primary-color: #06A816;
-    --secondary-color: #E75D02;
-    --text-color: #000000;
-    --background-color: #ffffff;
-    --font-primary: 'Habibi', serif;
-    --font-secondary: 'Irish Grover', cursive;
+  --primary-color: #06A816;
+  --secondary-color: #E75D02;
+  --text-color: #000000;
+  --background-color: #ffffff;
+  --font-primary: 'Habibi', serif;
+  --font-secondary: 'Irish Grover', cursive;
 }
-/* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
+
+/* -------------------- GLOBAL STYLES ---------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    font-family: var(--font-primary);
-    color: var(--text-color);
-    background-color: var(--background-color);
-    text-align: center;
+  font-family: var(--font-primary);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  text-align: center;
 }
+
+/* Header */
 header {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    text-align: center;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
 }
+
 h1 {
-    font-family: var(--font-secondary);
-    font-size: 2.5em;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-    margin: 0;
+  font-family: var(--font-secondary);
+  font-size: 2.5em;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  margin: 0;
 }
+
+/* General Heading Styles */
 h2 {
-    font-family: var(--font-secondary);
-    font-size: 1.75em;
-    text-align: left;
-    margin: 10px;
+  font-family: var(--font-secondary);
+  font-size: 1.75em;
+  text-align: left;
+  margin: 10px;
 }
+
 h3 {
-    font-family: var(--font-secondary);
-    font-size: 1.25em;
-    text-align: left;
-    margin: 10px;
+  font-family: var(--font-secondary);
+  font-size: 1.25em;
+  text-align: left;
+  margin: 10px;
 }
+
 p {
-    text-align: left;
-    max-width: 800px;
-    margin: 15px;
+  text-align: left;
+  max-width: 800px;
+  margin: 15px auto; /* center paragraphs */
 }
 
-/* NAVIGATION - Default (mobile first) */
+/* NAVIGATION */
 nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
 }
 
-/* NAV BUTTONS */
 nav button {
-    background-color: var(--secondary-color);
-    color: white;
-    border: 2px solid white;
-    padding: 12px 24px;
-    font-size: 1.25em;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    width: 200px; 
-    height: 50px; 
-    text-align: center;
+  background-color: var(--secondary-color);
+  color: white;
+  border: 2px solid white;
+  padding: 12px 24px;
+  font-size: 1.25em;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  width: 200px;
+  height: 50px;
+  text-align: center;
 }
-
 nav button:hover {
-    background-color: white;
-    color: var(--secondary-color);
+  background-color: white;
+  color: var(--secondary-color);
 }
 
-
+/* GRID for Fruits & Vegetables */
 .grid {
-    display: grid;
-    gap: 15px;
-    padding: 20px;
-    grid-template-columns: 1fr;
+  display: grid;
+  gap: 15px;
+  padding: 20px;
+  justify-items: center; /* center each item horizontally */
 }
 
-article {
-    position: relative;
-    text-align: center;
-}
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+/* For each product <li> – making sure figure is relative so button can overlay */
+.grid li figure {
+  position: relative;
+  text-align: center;
+  margin: 0; /* remove default margin from figure */
 }
 
-img {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
+.grid li img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
 }
 
 .title-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
 }
 
-
-
+/* CONTACT SECTION */
 .contact-container {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 15px;
 }
 
-/* Remove bullets from hours list */
-.contact-hours ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.contact-container article {
+  margin: 10px;
 }
 
-/* Desktop layout */
-@media (min-width: 768px) {
-    .contact-container {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-
-    .contact-title,
-    .hours-title {
-        flex-basis: 15%; 
-        text-align: center;
-    }
-
-    .contact-info {
-        flex-basis: 35%; 
-    }
-
-    .contact-hours {
-        flex-grow: 1; 
-    }
+address {
+  font-style: normal; /* remove default italic style if you prefer */
 }
 
-
-
+/* Footer */
 footer {
-    background-color: white;
-    color: var(--primary-color);
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
+  background-color: white;
+  color: var(--primary-color);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .top-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--secondary-color);
-    color: white;
-    border: 2px solid white;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25em;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.2s;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--secondary-color);
+  color: white;
+  border: 2px solid white;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
 }
-
 .top-button:hover {
-    background-color: #c94b02;
+  background-color: #c94b02;
 }
 
-/* Responsive Grid Layout */
-@media (max-width: 768px) {
-    .grid { grid-template-columns: 1fr; } 
-   }
-@media (min-width: 768px) {
-    .grid { grid-template-columns: repeat(2, 1fr); } 
-   }
-@media (min-width: 1024px) {
-    .grid { grid-template-columns: repeat(3, 1fr); } 
-   }
-@media (min-width: 1280px) {
-    .grid { grid-template-columns: repeat(4, 1fr); } 
-   }
-/*-------------------- MEDIA QUERY (medium) --------------------------------*/
+/* -------------------- MEDIA QUERIES ---------------------------------------- */
 @media (min-width: 834px) {
-    nav {
-        flex-direction: row;
-        justify-content: center;
-    }
+  nav {
+    flex-direction: row;
+    justify-content: center;
+  }
+  nav button {
+    width: 200px;
+    height: 50px;
+  }
 
-    nav button {
-        width: 200px; 
-        height: 50px; 
-    }
+  .contact-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: center;
+  }
 }
 
-/*-------------------- MEDIA QUERY (large) ------------------------------------*/
 @media (min-width: 1280px) {
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    nav {
-        flex-direction: row;
-        position: absolute;
-        right: 20px;
-        top: 25px;
-    }
-
-    nav button {
-        width: 200px; 
-        height: 50px; 
-        margin-left: 10px;
-    }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav {
+    flex-direction: row;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+  }
+  nav button {
+    margin-left: 10px;
+  }
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
-/*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
 @media (min-width: 1440px) {
-    nav {
-        right: 30px;
-    }
+  nav {
+    right: 30px;
+  }
 }
-/* Fruit & Vegetable Grid */
-.grid {
-    display: grid;
-    gap: 15px;
-    padding: 20px;
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Optional: keep your modal styles if you have a modal in script.js */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+.modal-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  font-size: 2em;
+  cursor: pointer;
 }
