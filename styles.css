@@ -290,7 +290,14 @@ footer {
     align-items: center;
   }
 }
-
+/* Center the contact container content on mobile */
+    .contact-container h3,
+    .contact-container p,
+    .contact-container ul {
+      text-align: center;
+    }
+  
+  
 /* -------------------- MODAL STYLES -------------------------------- */
 .modal {
   position: fixed;
