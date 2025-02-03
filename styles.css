@@ -76,8 +76,9 @@ nav button {
     cursor: pointer;
     border-radius: 8px;
     transition: all 0.3s ease;
-    width: 100%; /* Full width on mobile */
-    max-width: 300px;
+    width: 200px; 
+    height: 50px; 
+    text-align: center;
 }
 
 nav button:hover {
@@ -121,19 +122,43 @@ nav button:hover {
     color: white;
     padding: 20px;
 }
+
 .contact-container {
     display: flex;
     flex-direction: column;
     text-align: left;
     gap: 15px;
 }
+
+/* Remove bullets from hours list */
 .contact-hours ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
+/* Desktop layout */
+@media (min-width: 768px) {
+    .contact-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 
+    .contact-title,
+    .hours-title {
+        flex-basis: 15%; 
+        text-align: left;
+    }
+
+    .contact-info {
+        flex-basis: 35%; 
+    }
+
+    .contact-hours {
+        flex-grow: 1; 
+    }
+}
 
 
 
@@ -190,28 +215,11 @@ footer {
     }
 
     nav button {
-        width: auto; /* Remove full width */
-    }
-    .contact-container {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-
-    .contact-title,
-    .hours-title {
-        flex-basis: 15%; 
-        text-align: left;
-    }
-
-    .contact-info {
-        flex-basis: 35%; 
-    }
-
-    .contact-hours {
-        flex-grow: 1; 
+        width: 200px; 
+        height: 50px; 
     }
 }
+
 /*-------------------- MEDIA QUERY (large) ------------------------------------*/
 @media (min-width: 1280px) {
     header {
@@ -228,7 +236,8 @@ footer {
     }
 
     nav button {
-        width: auto;
+        width: 200px; 
+        height: 50px; 
         margin-left: 10px;
     }
 }
