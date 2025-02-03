@@ -21,6 +21,7 @@ body {
     font-family: var(--font-primary);
     color: var(--text-color);
     background-color: var(--background-color);
+    text-align: center;
 }
 header {
     background-color: var(--primary-color);
@@ -94,18 +95,28 @@ nav button:hover {
     grid-template-columns: 1fr;
 }
 
-.item {
+article {
     position: relative;
     text-align: center;
 }
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
 
-.item img {
+img {
     width: 250px;
     height: 250px;
     object-fit: cover;
 }
 
-.item .title-button {
+.title-button {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -126,7 +137,7 @@ nav button:hover {
 .contact-container {
     display: flex;
     flex-direction: column;
-    text-align: left;
+    text-align: center;
     gap: 15px;
 }
 
@@ -148,7 +159,7 @@ nav button:hover {
     .contact-title,
     .hours-title {
         flex-basis: 15%; 
-        text-align: left;
+        text-align: center;
     }
 
     .contact-info {
@@ -254,4 +265,5 @@ footer {
     gap: 15px;
     padding: 20px;
 }
+
 
