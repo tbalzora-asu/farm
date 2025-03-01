@@ -97,7 +97,7 @@ h3 {
 p {
   text-align: left;
   max-width: 800px;
-  margin: 15px auto; 
+  margin: 15px auto; /* center paragraphs */
 }
 
 /* NAVIGATION */
@@ -133,13 +133,14 @@ nav button:hover {
   display: grid;
   gap: 15px;
   padding: 20px;
-  justify-items: center; 
+  justify-items: center; /* center each item horizontally */
 }
 
+/* For each product <li> – making sure figure is relative so button can overlay */
 .grid li figure {
   position: relative;
   text-align: center;
-  margin: 0; 
+  margin: 0; /* remove default margin from figure */
 }
 
 .grid li img {
@@ -225,7 +226,7 @@ footer {
   .contact-container {
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     text-align: center;
   }
 }
@@ -274,6 +275,7 @@ footer {
   }
 }
 
+/* Optional: keep your modal styles if you have a modal in script.js */
 .modal {
   position: fixed;
   top: 0;
