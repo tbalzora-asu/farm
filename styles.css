@@ -97,7 +97,7 @@ h3 {
 p {
   text-align: left;
   max-width: 800px;
-  margin: 15px auto; /* center paragraphs */
+  margin: 15px auto; 
 }
 
 /* NAVIGATION */
@@ -133,14 +133,13 @@ nav button:hover {
   display: grid;
   gap: 15px;
   padding: 20px;
-  justify-items: center; /* center each item horizontally */
+  justify-items: center; 
 }
 
-/* For each product <li> – making sure figure is relative so button can overlay */
 .grid li figure {
   position: relative;
   text-align: center;
-  margin: 0; /* remove default margin from figure */
+  margin: 0; 
 }
 
 .grid li img {
@@ -275,7 +274,6 @@ footer {
   }
 }
 
-/* Optional: keep your modal styles if you have a modal in script.js */
 .modal {
   position: fixed;
   top: 0;
